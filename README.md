@@ -11,10 +11,7 @@ This library aims to make this much easier by allowing the run-time switching of
 # Usage
 
 ```
-# When released to NPM
 npm i -S react-native-device-screen-switcher
-# In the meantime
-npm i -S https://github.com/calvium/react-native-device-screen-switcher.git
 ```
 
 In your root-level component, wrap the root component returned by `render()` with `<ScreenSwitcher>`.
@@ -56,6 +53,12 @@ To hide the `Switch` button use the `hideButton` prop on ScreenSwitcher, e.g.
 </ScreenSwitcher>
  }
 ```
+
+# In Production
+
+In production builds the `<ScreenSwitcher>` component simply passes through the child components without changing them using the same method as the `react-redux` `<Provider>` component. 
+
+This means it's not necessary to remove `<ScreenSwitcher>` from your root component for production builds.
 
 # Similar libraries
 
