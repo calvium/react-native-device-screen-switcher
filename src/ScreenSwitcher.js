@@ -115,7 +115,7 @@ ScreenSwitcher.defaultProps = {
 
 ScreenSwitcher.propTypes = {
   children: PropTypes.node.isRequired,
-  hideButton: PropTypes.boolean,
+  hideButton: PropTypes.bool,
 };
 
 export default ScreenSwitcher;
