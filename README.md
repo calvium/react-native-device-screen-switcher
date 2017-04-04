@@ -12,7 +12,7 @@ This library aims to make this much easier by allowing the run-time switching of
 # When released to NPM
 npm i -S react-native-device-screen-switcher
 # In the meantime
-npm i -S git@github.com:calvium/react-native-device-screen-switcher.git
+npm i -S https://github.com/calvium/react-native-device-screen-switcher.git
 ```
 
 In your root-level component, wrap the root component returned by `render()` with `<ScreenSwitcher>`.
@@ -21,7 +21,7 @@ In your root-level component, wrap the root component returned by `render()` wit
 import ScreenSwitcher from 'react-native-device-screen-switcher';
 
 class MyRoot extends Component {
- ....
+ ...
  render() {
    return (<ScreenSwitcher>
          <MyRootComponent/>
@@ -45,6 +45,15 @@ Additionally, the app will render images using the density appropriate to the si
 
 - Notes: Dimensions.get('window') will now return the size of the simulated device. So long as you have followed React Native's documentation and **not** cached these values, your app will continue to render with the correct simulated sizes.
 
+
+To hide the `Switch` button use the `hideButton` prop on ScreenSwitcher, e.g.
+
+```js
+<ScreenSwitcher hideButton>
+ ...
+</ScreenSwitcher>
+ }
+```
 
 # Similar libraries
 

@@ -54,7 +54,6 @@ class ScreenSwitcher extends Component {
             return;
           }
 
-
           const deviceName = deviceNames[index];
           const deviceInfo = deviceSizes[deviceName];
           if (!deviceInfo) {
@@ -76,7 +75,7 @@ class ScreenSwitcher extends Component {
     }
 
     // In dev mode, resize the main content
-    const {children} = this.props;
+    const {children, hideButton} = this.props;
 
     const {width, height} = Dimensions.get('window');
     return (
@@ -84,9 +83,11 @@ class ScreenSwitcher extends Component {
         <View style={{width, height}}>
           {children}
         </View>
-        <TouchableHighlight style={styles.buttonContainer} onPress={this.resize}>
-          <Text style={styles.buttonText}>Switch</Text>
-        </TouchableHighlight>
+        {hideButton
+          ? undefined
+          : <TouchableHighlight style={styles.buttonContainer} onPress={this.resize}>
+              <Text style={styles.buttonText}>Switch</Text>
+            </TouchableHighlight>}
       </View>
     );
   }
@@ -108,8 +109,13 @@ if (__DEV__) {
   };
 }
 
+ScreenSwitcher.defaultProps = {
+  hideButton: false,
+};
+
 ScreenSwitcher.propTypes = {
   children: PropTypes.node.isRequired,
+  hideButton: PropTypes.boolean,
 };
 
 export default ScreenSwitcher;
