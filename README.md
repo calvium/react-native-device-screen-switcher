@@ -57,6 +57,12 @@ To hide the `Switch` button use the `hideButton` prop on ScreenSwitcher, e.g.
  }
 ```
 
+# In Production
+
+In production builds the `<ScreenSwitcher>` component simply passes through the child components without changing them using the same method as the `react-redux` `<Provider>` component. 
+
+This means it's not necessary to remove `<ScreenSwitcher>` from your root component for production builds.
+
 # Similar libraries
 
 This library was inspired by https://github.com/machadogj/react-native-layout-tester, which performs a similar function by running your app on an iPad.
