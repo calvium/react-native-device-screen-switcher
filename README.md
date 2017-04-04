@@ -6,6 +6,8 @@ This library aims to make this much easier by allowing the run-time switching of
 
 > This library requires React Native 0.44.0-rc0 or above
 
+![GIF of the library in action](docs/ScreenSwitcher.gif)
+
 # Usage
 
 ```
