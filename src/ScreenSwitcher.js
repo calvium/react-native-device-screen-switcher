@@ -37,7 +37,7 @@ class ScreenSwitcher extends Component {
     if (!__DEV__) {
       return;
     }
-    this.state = {count: 0};
+    this.state = {screenSwitcherDeviceName: 'Default'};
 
     this.resize = () => {
       const deviceNames = Object.keys(deviceSizes);
@@ -54,14 +54,16 @@ class ScreenSwitcher extends Component {
             return;
           }
 
-          const deviceInfo = deviceSizes[deviceNames[index]];
+
+          const deviceName = deviceNames[index];
+          const deviceInfo = deviceSizes[deviceName];
           if (!deviceInfo) {
             return;
           }
 
           performResize(deviceInfo);
 
-          this.setState({count: this.state.count + 1}); // force re-render
+          this.setState({screenSwitcherDeviceName: deviceName}); // force re-render of this component
         }
       );
     };
@@ -88,6 +90,22 @@ class ScreenSwitcher extends Component {
       </View>
     );
   }
+}
+
+if (__DEV__) {
+  // Use context to force re-renders for our children when screen is resized. Ensures that images are rendered with
+  // correct density (2x, @3x)
+  ScreenSwitcher.prototype.getChildContext = function() {
+    const {screenSwitcherDeviceName} = this.state;
+    return {screenSwitcherDeviceName};
+  };
+
+  ScreenSwitcher.childContextTypes = {
+    /**
+     * Used to force re-render of children when screen is resized
+     */
+    screenSwitcherDeviceName: PropTypes.string,
+  };
 }
 
 ScreenSwitcher.propTypes = {
