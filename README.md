@@ -14,7 +14,8 @@ npm i -S git@github.com:calvium/react-native-device-screen-switcher.git
 ```
 
 In your root-level component, wrap the root component returned by `render()` with `<ScreenSwitcher>`.
-```
+
+```js
 import ScreenSwitcher from 'react-native-device-screen-switcher';
 
 class MyRoot extends Component {
@@ -28,7 +29,7 @@ class MyRoot extends Component {
 
 - Run your app in Debug mode. For best results run on the iPhone 6 Plus simulator:
 
-```
+```bash
 react-native run-ios --simulator="iPhone 6 Plus"
 ```
 
