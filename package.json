@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/calvium/react-native-device-screen-switcher#readme",
   "peerDependencies": {
-    "react-native": ">=0.44.0-rc.0",
-    "react": "X"
+    "react-native": ">=0.34.0",
+    "react": "*"
   }
 }
