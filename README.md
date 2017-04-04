@@ -11,10 +11,7 @@ This library aims to make this much easier by allowing the run-time switching of
 # Usage
 
 ```
-# When released to NPM
 npm i -S react-native-device-screen-switcher
-# In the meantime
-npm i -S https://github.com/calvium/react-native-device-screen-switcher.git
 ```
 
 In your root-level component, wrap the root component returned by `render()` with `<ScreenSwitcher>`.
