@@ -1,6 +1,6 @@
-import React, {PropTypes, Component, Children, Platform} from 'react';
+import React, {PropTypes, Component, Children} from 'react';
 
-import {View, Dimensions, TouchableHighlight, StyleSheet, ActionSheetIOS, Text} from 'react-native';
+import {View, Dimensions, TouchableHighlight, StyleSheet, ActionSheetIOS, Text, Platform} from 'react-native';
 import deviceSizes from './deviceSizes';
 
 const styles = StyleSheet.create({
