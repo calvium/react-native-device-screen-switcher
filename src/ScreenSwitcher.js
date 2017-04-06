@@ -1,4 +1,4 @@
-import React, {PropTypes, Component, Children} from 'react';
+import React, {PropTypes, Component, Children, Platform} from 'react';
 
 import {View, Dimensions, TouchableHighlight, StyleSheet, ActionSheetIOS, Text} from 'react-native';
 import deviceSizes from './deviceSizes';
@@ -25,6 +25,9 @@ function performResize(deviceInfo) {
   // TODO: Android uses screenPhysicalPixels - see https://github.com/facebook/react-native/blob/master/Libraries/Utilities/Dimensions.js
 }
 
+// Disable if Production or Android (Android support coming later)
+const isActive = Platform.OS === 'ios' && __DEV__;
+
 /**
  * Insert this component at the root of your app to
  * add a 'Switch'
@@ -34,7 +37,7 @@ class ScreenSwitcher extends Component {
     super(props);
 
     // Do nothing in production mode
-    if (!__DEV__) {
+    if (!isActive) {
       return;
     }
     this.state = {screenSwitcherDeviceName: 'Default'};
@@ -70,7 +73,7 @@ class ScreenSwitcher extends Component {
 
   render() {
     // In production, just pass through children unchanged
-    if (!__DEV__) {
+    if (!isActive) {
       return Children.only(this.props.children);
     }
 
@@ -93,7 +96,7 @@ class ScreenSwitcher extends Component {
   }
 }
 
-if (__DEV__) {
+if (isActive) {
   // Use context to force re-renders for our children when screen is resized. Ensures that images are rendered with
   // correct density (2x, @3x)
   ScreenSwitcher.prototype.getChildContext = function() {
