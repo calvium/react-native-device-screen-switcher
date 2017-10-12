@@ -4,7 +4,7 @@ Testing your React Native UI layouts on different screen sizes can be quite time
 
 This library aims to make this much easier by allowing the run-time switching of the main app viewport to match the sizes of different devices.
 
-> This library requires React Native 0.34.0 or above.
+> This library requires React Native 0.43.0 or above. For versions older versions of React Native (from 0.34.0 up), use the 0.0.4 release.
 
 ![GIF of the library in action](docs/ScreenSwitcher.gif)
 
