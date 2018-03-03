@@ -33,13 +33,13 @@ const deviceSizes = {
     },
   },
   'iPhone X': { // note: this won't have the bezel
-     windowPhysicalPixels: {
+    windowPhysicalPixels: {
        width: 1125,
        height: 2436,
        scale: 3,
-       fontScale: 3
-     }
-  }
+       fontScale: 3,
+   },
+  },
 };
 
 export default deviceSizes;
