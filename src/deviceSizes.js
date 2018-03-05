@@ -16,7 +16,7 @@ const deviceSizes = {
       fontScale: 2,
     },
   },
-  'iPhone 6': {
+  'iPhone 6': { // 6s, 7, 8
     windowPhysicalPixels: {
       width: 750,
       height: 1334,
@@ -24,13 +24,21 @@ const deviceSizes = {
       fontScale: 2,
     },
   },
-  'iPhone 6 Plus': {
+  'iPhone 6 Plus': { // 6s+, 7+, 8+
     windowPhysicalPixels: {
       width: 1242,
       height: 2208,
       scale: 3,
       fontScale: 3,
     },
+  },
+  'iPhone X': { // note: this won't have the bezel
+    windowPhysicalPixels: {
+       width: 1125,
+       height: 2436,
+       scale: 3,
+       fontScale: 3,
+   },
   },
 };
 
