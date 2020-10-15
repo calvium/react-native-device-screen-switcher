@@ -20,18 +20,21 @@ In your root-level component, wrap the root component returned by `render()` wit
 import ScreenSwitcher from 'react-native-device-screen-switcher';
 
 class MyRoot extends Component {
- ...
- render() {
-   return (<ScreenSwitcher>
-         <MyRootComponent/>
-    </ScreenSwitcher>)
- }
+  ...
+  render() {
+    return (
+      <ScreenSwitcher>
+        <MyRootComponent/>
+      </ScreenSwitcher>
+    )
+  }
+}
 ```
 
-- Run your app in Debug mode. For best results run on the iPhone 6 Plus simulator:
+- Run your app in Debug mode. For best results run on the iPhone 11 Pro Max simulator:
 
 ```bash
-react-native run-ios --simulator="iPhone 6 Plus"
+react-native run-ios --simulator="iPhone Pro Max"
 ```
 
 - You'll see a 'Switch' button at the bottom-right of the screen.
@@ -49,14 +52,29 @@ To hide the `Switch` button use the `hideButton` prop on ScreenSwitcher, e.g.
 
 ```js
 <ScreenSwitcher hideButton>
- ...
+  ...
 </ScreenSwitcher>
- }
+```
+
+For scale screen down to fit physical device dimensions, use `scaleToFit` prop, e.g.
+
+```js
+<ScreenSwitcher scaleToFit>
+  ...
+</ScreenSwitcher>
+```
+
+If you want to scale up to fill device screen, use 'scaleUp' prop with addition to `scaleToFit`, e.g.
+
+```js
+<ScreenSwitcher scaleToFit scaleUp>
+  ...
+</ScreenSwitcher>
 ```
 
 # In Production
 
-In production builds the `<ScreenSwitcher>` component simply passes through the child components without changing them using the same method as the `react-redux` `<Provider>` component. 
+In production builds the `<ScreenSwitcher>` component simply passes through the child components without changing them using the same method as the `react-redux` `<Provider>` component.
 
 This means it's not necessary to remove `<ScreenSwitcher>` from your root component for production builds.
 
