@@ -1,6 +1,6 @@
 {
   "name": "react-native-device-screen-switcher",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Run app in iPhone 6 Plus simulator and auto-scale the viewport to iPhone 4, 5, and 6 sizes while running.",
   "main": "index.js",
   "scripts": {},
